@@ -1,187 +1,183 @@
-!doctype html
-html lang=en
-head
-  meta charset=utf-8 
-  meta name=viewport content=width=device-width, initial-scale=1 
-  titleAnna — QA Engineertitle
-  style
-    root{
-      --bg #eaf6ff;
-      --nav #1f2937;
-      --navText #ffffff;
-      --accent #0ea5e9;
-      --card rgba(255,255,255,0.75);
-      --text #0f172a;
-      --muted #334155;
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anna — QA Engineer</title>
+  <style>
+    :root{
+      --bg: #eaf6ff;
+      --nav: #1f2937;
+      --navText: #ffffff;
+      --accent: #0ea5e9;
+      --card: rgba(255,255,255,0.75);
+      --text: #0f172a;
+      --muted: #334155;
     }
 
-    { box-sizing border-box; }
+    *{ box-sizing: border-box; }
     body{
-      margin0;
-      font-family Arial, Helvetica, sans-serif;
-      background var(--bg);
-      color var(--text);
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
 
-     Top navigation 
     .topbar{
-      background var(--nav);
-      color var(--navText);
-      padding 14px 28px;
-      displayflex;
-      align-itemscenter;
-      justify-contentspace-between;
+      background: var(--nav);
+      color: var(--navText);
+      padding: 14px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
     .brand{
-      font-weight700;
-      letter-spacing0.2px;
+      font-weight:700;
+      letter-spacing:0.2px;
     }
     .menu{
-      displayflex;
-      gap18px;
-      font-size14px;
+      display:flex;
+      gap:18px;
+      font-size:14px;
     }
     .menu a{
-      color var(--navText);
-      text-decorationnone;
-      opacity0.9;
+      color: var(--navText);
+      text-decoration:none;
+      opacity:0.9;
     }
-    .menu ahover{ opacity1; text-decorationunderline; }
+    .menu a:hover{ opacity:1; text-decoration:underline; }
 
-     Main content 
     .wrap{
-      max-width 1100px;
-      margin 0 auto;
-      padding 64px 24px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
     }
 
     .hero{
-      displaygrid;
-      grid-template-columns 1.2fr 1fr;
-      gap 40px;
-      align-itemsstart;
+      display:grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items:start;
     }
 
     .hero h1{
-      margin0 0 10px 0;
-      font-size 40px;
-      line-height 1.1;
+      margin:0 0 10px 0;
+      font-size: 40px;
+      line-height: 1.1;
     }
     .hero p{
-      margin0;
-      color var(--muted);
-      line-height 1.6;
-      max-width 520px;
-      font-size 14px;
+      margin:0;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 520px;
+      font-size: 14px;
     }
 
     .skills-title{
-      text-aligncenter;
-      margin 60px 0 22px;
-      font-size 34px;
-      letter-spacing 0.2px;
+      text-align:center;
+      margin: 60px 0 22px;
+      font-size: 34px;
+      letter-spacing: 0.2px;
     }
 
     .skills{
-      displaygrid;
-      grid-template-columns repeat(5, minmax(140px, 1fr));
-      gap 22px;
-      align-items stretch;
+      display:grid;
+      grid-template-columns: repeat(5, minmax(140px, 1fr));
+      gap: 22px;
+      align-items: stretch;
     }
 
     .skill-card{
-      background var(--card);
-      border 1px solid rgba(15,23,42,0.08);
-      border-radius 14px;
-      padding 18px 16px;
-      text-aligncenter;
-      backdrop-filter blur(6px);
+      background: var(--card);
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 14px;
+      padding: 18px 16px;
+      text-align:center;
+      backdrop-filter: blur(6px);
     }
     .skill-card h3{
-      margin0 0 12px 0;
-      font-size 14px;
-      text-transformnone;
-      letter-spacing0.2px;
+      margin:0 0 12px 0;
+      font-size: 14px;
+      letter-spacing:0.2px;
     }
 
     .icon{
-      width 44px;
-      height 44px;
-      displayinline-grid;
-      place-itemscenter;
-      border-radius 12px;
-      background rgba(14,165,233,0.12);
-      color var(--accent);
-      margin 0 auto;
-      font-weight 700;
-      font-size 18px;
+      width: 44px;
+      height: 44px;
+      display:inline-grid;
+      place-items:center;
+      border-radius: 12px;
+      background: rgba(14,165,233,0.12);
+      color: var(--accent);
+      margin: 0 auto;
+      font-weight: 700;
+      font-size: 18px;
     }
 
-     Responsive 
-    @media (max-width 900px){
-      .hero{ grid-template-columns 1fr; }
-      .skills{ grid-template-columns repeat(2, minmax(140px, 1fr)); }
-      .skills-title{ font-size 30px; }
-      .hero h1{ font-size 34px; }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .skills{ grid-template-columns: repeat(2, minmax(140px, 1fr)); }
+      .skills-title{ font-size: 30px; }
+      .hero h1{ font-size: 34px; }
     }
-    @media (max-width 420px){
-      .skills{ grid-template-columns 1fr; }
-      .topbar{ flex-directioncolumn; align-itemsflex-start; gap10px; }
+    @media (max-width: 420px){
+      .skills{ grid-template-columns: 1fr; }
+      .topbar{ flex-direction:column; align-items:flex-start; gap:10px; }
     }
-  style
-head
+  </style>
+</head>
 
-body
-  header class=topbar
-    div class=brandAnnadiv
-    nav class=menu aria-label=Top navigation
-      a href=#homeHomea
-      a href=#projectsProjectsa
-      a href=#readingReading Loga
-    nav
-  header
+<body>
+  <header class="topbar">
+    <div class="brand">Anna</div>
+    <nav class="menu" aria-label="Top navigation">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#reading">Reading Log</a>
+    </nav>
+  </header>
 
-  main class=wrap id=home
-    section class=hero
-      divdiv
-      div
-        h1I'm Anna (QA engineer)h1
-        p
+  <main class="wrap" id="home">
+    <section class="hero">
+      <div></div>
+      <div>
+        <h1>I'm Anna (QA engineer)</h1>
+        <p>
           I’m a QA engineer focused on clear requirements, reliable test coverage, and predictable releases.
-          I enjoy digging into edge cases, validating integrations, and turning ambiguous behavior into
-          actionable bug reports and test scenarios.
-        p
-      div
-    section
+          I enjoy digging into edge cases, validating integrations, and turning ambiguous behavior into actionable
+          bug reports and test scenarios.
+        </p>
+      </div>
+    </section>
 
-    h2 class=skills-titleMy Skillsh2
+    <h2 class="skills-title">My Skills</h2>
 
-    section class=skills aria-label=Skills
-      div class=skill-card
-        h3Postmanh3
-        div class=iconPMdiv
-      div
+    <section class="skills" aria-label="Skills">
+      <div class="skill-card">
+        <h3>Postman</h3>
+        <div class="icon">PM</div>
+      </div>
 
-      div class=skill-card
-        h3TestRailh3
-        div class=iconTRdiv
-      div
+      <div class="skill-card">
+        <h3>TestRail</h3>
+        <div class="icon">TR</div>
+      </div>
 
-      div class=skill-card
-        h3Jirah3
-        div class=iconJIdiv
-      div
+      <div class="skill-card">
+        <h3>Jira</h3>
+        <div class="icon">JI</div>
+      </div>
 
-      div class=skill-card
-        h3Oracle DBh3
-        div class=iconORdiv
-      div
+      <div class="skill-card">
+        <h3>Oracle DB</h3>
+        <div class="icon">OR</div>
+      </div>
 
-      div class=skill-card
-        h3MySQLh3
-        div class=iconMYdiv
-      div
-    section
-  main
-body
-html
+      <div class="skill-card">
+        <h3>MySQL</h3>
+        <div class="icon">MY</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
